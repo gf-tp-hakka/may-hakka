@@ -70,9 +70,10 @@ function showQuestion() {
 
     // 顯示結果文字：
     const resultMsg = (score === questions.length)
-    ? `🎉 恭喜 ${username} 全部答對，過關成功！<br>記得截圖存檔，5月30日到兒童新樂園蓋過關章，就算搶先過1關喔!`
+    ? `🎉 恭喜 ${username} 全部答對，過關成功！<br>記得"截圖存檔"，5月30日到兒童新樂園蓋過關章，就算搶先過1關喔!`
     : `😢 ${username}，再挑戰一次吧！`;
     document.getElementById("resultMessage").innerHTML = resultMsg;
+    document.getElementById("quizHeader").style.display = "none";
 
     // 額外新增：全部答對才觸發動畫
     if (score === questions.length) {
