@@ -1,0 +1,342 @@
+/* =============== 網頁整體與全局設定 =============== */
+
+/* 啟用平滑滾動：點選導覽列的錨點連結時，頁面會平滑滑動過去 */
+html {
+  scroll-behavior: smooth;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 8px; /* 或你覺得舒服的距離 */
+}
+
+/* 設定全站通用的文字字型、背景色與文字顏色 */
+body {
+  font-family: "Noto Sans TC", sans-serif;  /* 使用適合繁體中文的無襯線字型 */
+  margin: 0;                                /* 移除預設邊距 */
+  background: #fffbea;                      /* 溫暖米黃色背景，給人柔和親切的感覺 */
+  color: #333;                              /* 深灰文字，提高閱讀性 */
+}
+
+/* =============== 導覽列 Header 區塊 =============== */
+
+/* 固定導覽列樣式：始終位於畫面頂部 */
+header {
+  position: fixed;                         /* 固定位置，不會隨捲動消失 */
+  top: 0;                                  /* 固定在最上方 */
+  width: 100%;                             /* 寬度填滿整個畫面 */
+  z-index: 999;                            /* 確保蓋過其他內容 */
+  background: #d4d6c8;                     /* 莫蘭迪灰綠，象徵艾草與自然感 */
+  color: #4a3f35;                          /* 深褐色文字，對比明顯又有傳統感 */
+  padding: 16px 0;                         /* 垂直內距上下各 16px */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);  /* 添加底部陰影，讓導覽列浮起來 */
+}
+
+/* 導覽列內部容器的排版：左右對齊 */
+.header-container {
+  max-width: 1000px;      /* 內容最大寬度，避免過長不易閱讀 */
+  margin: auto;           /* 水平置中 */
+  display: flex;          /* 使用 Flex 排版 */
+  justify-content: space-between; /* 左右兩邊貼齊 */
+  align-items: center;    /* 垂直置中對齊 */
+  padding: 0 20px;        /* 左右內距 */
+}
+
+/* 網頁標題樣式（左側） */
+.header-container h1 {
+  margin: 0;              /* 移除預設邊距 */
+  font-size: 22px;        /* 適中的標題大小 */
+}
+
+/* 導覽連結樣式（右側） */
+nav a {
+  margin-left: 20px;      /* 每個連結之間的間距 */
+  color: #4a3f35;         /* 同樣使用深褐色，與標題一致 */
+  text-decoration: none; /* 移除底線 */
+  font-size: 16px;        /* 一般大小字 */
+  padding: 6px 10px;      /* 加點內距好點擊 */
+  border-radius: 4px;     /* 圓角讓外觀更溫和 */
+  transition: background 0.3s; /* 滑過時加上淡淡動畫 */
+}
+
+/* 滑鼠移到導覽連結時的背景色變化 */
+nav a:hover {
+  background: #b2a39a; /* 改成灰色 */
+  color: white;         /* 文字改成白色，讓對比更清楚 */
+}
+
+/* 用來佔 header 高度空間，避免內容被擋住 */
+.spacer {
+  height: 70px; /* 與 header 大小相符 */
+}
+
+/* =============== 主要內容區塊 =============== */
+
+/* 每個區塊（section）的基本排版 */
+section {
+  padding: 40px 20px;     /* 內距：上下 40px、左右 20px */
+  max-width: 800px;       /* 區塊最大寬度，確保內容不會太寬難讀 */
+  margin: auto;           /* 水平置中 */
+}
+
+/* =============== 導覽列下方的大標題區塊（Hero Banner =============== */
+.hero-banner {
+  background:none;                /* 溫暖莫蘭迪米白色背景 */
+  text-align: center;                 /* 文字置中 */
+  padding: 10px 10px 10px;            /* 上方留白多一點 */
+  color: #4a3f35;                     /* 深褐色文字 */
+}
+
+.hero-banner h2 {
+  font-size: 40px;                    /* 大標題字體 */
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hero-banner p {
+  font-size: 18px;
+  text-align: center;
+  color: #5e4b3c;                     /* 較淡的褐色副標題 */
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 1000px; /* 或你希望的最大寬度 */
+  height: auto;
+  aspect-ratio: 3 / 1; /* 或根據實際比例調整 */
+  background-image: url('images/banner.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain; /* ✅ 改成 contain，不裁切圖片 */
+  margin: 0 auto 40px;      /* ✅ 置中 */
+}
+
+/* =============== 按鈕樣式 =============== */
+
+/* 通用的按鈕外觀（開始遊戲、重新開始等） */
+.btn {
+  background: #0eb052;   /* 淡紫藍色，明亮且科技感 */
+  color: white;          /* 白色文字對比強烈 */
+  border: none;          /* 移除預設邊框 */
+  padding: 12px 24px;    /* 內距讓按鈕看起來夠大好按 */
+  font-size: 16px;       /* 文字大小適中 */
+  border-radius: 6px;    /* 圓角讓外觀更溫柔 */
+  cursor: pointer;       /* 滑鼠變小手提示可以點擊 */
+  margin-top: 20px;      /* 與上方元件拉開距離 */
+}
+
+/* 滑鼠移到按鈕上的顏色變化 */
+.btn:hover {
+  background: #76e699;   /* 加深藍紫色，提示互動 */
+}
+
+/* =============== 資訊卡片樣式（故事介紹） =============== */
+
+.info {
+  background: white;                       /* 白底讓文字更清楚 */
+  border-radius: 10px;                     /* 圓角讓區塊柔和 */
+  padding: 20px;                           /* 內距保持舒適閱讀 */
+  margin-top: 30px;                        /* 每張卡片之間有距離 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);   /* 卡片陰影讓層次感更明顯 */
+}
+/* =============== 海報區 =============== */
+.poster-section {
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.poster-section h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.poster-wrapper {
+  width: 100%;
+  max-width: 1000px; /* ✅ 強制限制圖片寬度 */
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.poster-wrapper img {
+  width: 100%;        /* ✅ 滿寬但限制在容器內 */
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* =============== 小遊戲區塊樣式 =============== */
+
+/* 問答區的背景與邊框 */
+.quiz-section {
+  background-image: url('images/quiz-bg.jpg');      /* 圖片作為背景 */
+  background-size: cover;
+  border-top: 2px dashed #ccc; /* 虛線區隔前面段落 */
+  padding-top: 50px;         /* 上方留白 */
+  margin-top: 0px;          /* 與上一區塊有距離 */
+}
+
+/* 單一題目的外觀間距 */
+.question-box {
+  margin-bottom: 30px;
+}
+
+/* 題目選項按鈕樣式 */
+button.answer-btn {
+  display: block;           /* 每個選項換行一列 */
+  margin: 10px 0;           /* 每個選項之間有距離 */
+  padding: 10px;            /* 內距讓按鈕大小適中 */
+  font-size: 16px;          /* 字體大小 */
+  width: 100%;              /* 滿版按鈕，手機也好操作 */
+  background: #98eba8;      /* 淺藍色按鈕底色 */
+  border: none;             /* 移除預設邊框 */
+  border-radius: 5px;       /* 小圓角讓外觀和諧 */
+}
+
+/* 選項按鈕 hover 效果 */
+button.answer-btn:hover {
+  background: #3cb346;      /* 滑過時加深藍色 */
+}
+
+/* =============== 結果區塊樣式 =============== */
+
+/* 顯示答題結果的區塊 */
+#resultBox {
+  font-weight: bold;        /* 文字加粗 */
+  font-size: 20px;          /* 文字大小 */
+  margin-top: 20px;         /* 與上方元素間距 */
+  color: #d53f8c;           /* 桃紅色文字，吸引注意 */
+  text-align: center;       /* 文字置中 */
+  display: none;            /* 預設不顯示，答題完成才顯示 */
+}
+
+/* 中央對齊區塊（開始畫面、答題、重新開始） */
+#startBox, #quiz-container, #restartBtn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 使用者暱稱輸入框樣式 */
+input#username {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;   /* 淺灰邊框 */
+  border-radius: 5px;       /* 小圓角 */
+}
+
+/*========動畫效果========*/
+
+/* 飄落表情符號容器，固定定位在畫面上層 */
+#emoji-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  pointer-events: none; /* 不干擾點擊 */
+  overflow: visible;
+  z-index: 9999;
+}
+
+/* 單一表情符號動畫樣式 */
+.emoji {
+  position: absolute;
+  font-size: 32px;
+  animation: fall 2s linear forwards;
+  opacity: 0.9;
+}
+
+/* 飄落動畫關鍵影格 */
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* =============== 頁尾區塊 =============== */
+
+footer {
+  width: 100%;
+  background-color: #fefaf6;       /* 與整體背景一致 */
+  text-align: center;
+  padding: 24px 16px;
+  color: #666;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
+}
+.footer-content {
+  display: flex;                /* 啟用 Flex 排版 */
+  align-items: center;          /* 垂直置中 */
+  justify-content: center;      /* 水平置中 */
+  gap: 8px;                     /* 文字與 Logo 之間留 8px 間距 */
+}
+
+.footer-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-logo {
+  width: 80px;                  /* 控制 Logo 寬度，可依需求調整 */
+  height: auto;
+  display: block;
+}
+
+/* =============== 響應式設計（手機版） =============== */
+@media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;        /* ✅ 左右排列 */
+    justify-content: space-between; /* ✅ 左右兩端對齊 */
+    align-items: center;        /* ✅ 垂直置中 */
+    padding: 10px 20px;         /* ✅ 內距防止貼邊 */
+  }
+
+  .header-container h1 {
+    font-size: 20px;
+    margin: 0;                  /* ✅ 避免多餘空間造成不對齊 */
+  }
+
+  nav a {
+    font-size: 14px;
+    margin-left: 16px;          /* ✅ 每個連結間距 */
+  }
+
+  section {
+    padding: 24px 16px;         /* 手機上縮小內距 */
+  }
+
+  input#username,
+  .btn,
+  button.answer-btn {
+    width: 100%;                /* 表單與按鈕滿版，更好點擊 */
+    box-sizing: border-box;     /* 內距計入寬度，避免超出 */
+  }
+
+  .question-box h3 {
+    font-size: 18px;            /* 題目標題稍微縮小 */
+  }
+
+  #resultBox {
+    font-size: 18px;            /* 結果文字縮小一點 */
+  }
+    .hero-image {
+    height: auto;
+    margin-top: 70px; /* 與 header 高度一致即可 */
+    aspect-ratio: 2 / 1;   /* 或你圖片的實際寬高比例 */
+    background-size: contain;
+    padding-top: 0px;     /* 可選：讓圖片與 header 有間距 */
+  }
+}

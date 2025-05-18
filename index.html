@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>端午節小知識 | 一頁式活動網頁</title>
+
+  <!-- 設定 RWD 響應式畫面寬度，確保在手機上也正常顯示 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 連結外部 CSS 樣式檔 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 固定 header 的佔位空間 -->
+  <div class="spacer"></div>
+  <!-- 主視覺 -->
+  <div class="hero-image"></div>
+
+
+  <!-- 導覽列區塊：包含左側標題與右側錨點連結 -->
+  <header>
+    <div class="header-container">
+      <h1>端午節小知識</h1>
+      <nav>
+        <a href="#story">端午節故事</a>
+        <a href="#quiz">小遊戲</a>
+      </nav>
+    </div>
+  </header>
+  
+
+  <!-- ✅ 大標題區塊 -->
+  <section class="hero-banner">
+    <h2 class="tight">五月節愛做麼个</h2>
+    <h2 class="tight">線上搶先挑戰</h2>
+    <p>粽夏个時節 端午安康 </p>
+    <p>5/30在兒童新樂園鬧熱展開</p>
+    <p>端午遊「客」闖3關就送祈福小香包</p>
+    <p>歡迎線上搶先挑戰第一關 - 「五月節愛做麼个」? </p>
+
+  </section>
+
+  <!-- 端午節故事介紹區塊 -->
+  <section id="story">
+    <div class="info">
+      <h2>🐲五月節 愛做麼个?</h2>
+        <p>每年農曆五月五日是端午節，客家人稱作「五月節」。這一天有許多象徵祈福與健康的傳統儀式：</p>
+        <ul>
+          <li>食粽仔（<span class="hakkanese">siid zung eˋ</span>）</li>
+          <li>划龍船（<span class="hakkanese">paˇ liungˇ sonˇ</span>）</li>
+          <li>結香包（<span class="hakkanese">giedˋ hiongˊ bauˊ</span>）</li>
+          <li>比企卵（<span class="hakkanese">biˋ kiˊ lonˋ</span>）</li>
+          <li>插菖蒲（<span class="hakkanese">cabˋ congˊ puˇ</span>）</li>
+          <li>洗百草水（<span class="hakkanese">seˋ bagˋ coˋ suiˋ</span>）</li>
+        </ul>
+        <p>這些習俗不只是傳統，更是一種祝福。讓我們一起動手參與，為端午注入儀式感，祈求安康平安！</p>
+    </div>
+
+    <div class="info">
+      <h3>🧧 結香包的意義</h3>
+      <p>香包裡裝有艾草、雄黃與香料，據說能驅邪避煞。在客家文化中，小孩身上戴香包還象徵長輩的祝福。</p>
+    </div>
+
+</section>
+
+  <section class="quiz-section" id="quiz">
+    <h2 style="text-align: center;">🎯五月節 線上搶先挑戰</h2>
+    <p style="text-align: center;">遊戲說明：點選關於端午節的三題正確答案即可過關！ </p>
+    <p style="text-align: center;">(小提示：上面文字區塊都有答案唷~)</p>
+
+    <!-- 開始遊戲輸入名字區 -->
+    <div id="startBox">
+      <p>請輸入你的名字以開始挑戰：</p>
+      <input type="text" id="username" placeholder="輸入你的名字">
+      <br><br>
+      <button class="btn" onclick="startQuiz()">開始遊戲</button>
+    </div>
+
+    <!-- 顯示題目的區域 -->
+    <div id="quiz-container"></div>
+
+    <!-- 顯示結果的區域 -->
+      <div id="resultBox">
+        <p id="resultMessage"></p>
+        <button class="btn" id="restartBtn" onclick="restartQuiz()">重新開始</button>
+      </div>
+     
+    <!-- 飄落動畫容器 -->
+    <div id="emoji-container"></div>  
+    
+  </section>
+
+  <div class="spacer"></div>
+  <!-- 在 poster-section 之前，插入分隔線 -->
+  <hr class="divider">
+  
+  <section class="poster-section">
+  <h3>📌 5/30 粽夏个時節活動總覽</h3>
+  <div class="poster-wrapper">
+    <img src="images/duanwu-poster.jpg" alt="端午節活動海報">
+  </div>
+  </section>
+  
+  <!-- 頁尾說明 -->
+  <footer>
+    <div class="footer-content">
+    <p>© 2025 五月節小知識活動頁</p>
+    <span class="footer-label">｜主辦單位：</span>
+    <img src="images/logo.png" alt="主辦單位 Logo" class="footer-logo">
+  </div>
+  </footer>
+
+  <!-- 載入外部 JavaScript -->
+  <script src="script.js"></script>
+
+  <!-- 載入音樂 -->
+  <audio id="bgm" src="sounds/五月節.mp3" preload="auto" loop></audio>
+</body>
+</html>
