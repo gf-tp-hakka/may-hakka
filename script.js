@@ -46,6 +46,12 @@ function startQuiz() {
   // 隱藏起始區塊（輸入名字與開始按鈕）
   document.getElementById("startBox").style.display = "none";
 
+    // ✅ 在這裡加上 GA 追蹤「開始遊戲」
+  gtag('event', 'start_game_click', {
+    event_category: 'engagement',
+    event_label: 'Start Game Button'
+  });
+
     // ✅ 播放背景音樂
   const bgm = document.getElementById("bgm");
   if (bgm) {
